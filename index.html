@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kartu Komitmen</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.rawgit.com/michalsnik/aos/2.3.1/dist/aos.css"
+    />
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: url("star.jpg") center/cover no-repeat fixed; /* Ganti 'path/to/your/image.jpg' dengan path gambar Anda */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        color: #fff;
+      }
+
+      .swiper-container {
+        width: 80%;
+        height: 80%;
+      }
+
+      .swiper-slide {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 20px;
+        border-radius: 10px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Efek bayangan teks */
+      }
+
+      .swiper-slide h1 {
+        font-size: 2.5rem;
+        color: #fff;
+      }
+
+      .swiper-slide p {
+        font-size: 1.5rem;
+        margin-top: 1rem;
+        color: #fff;
+      }
+
+      .swiper-button-next,
+      .swiper-button-prev {
+        color: #fff;
+      }
+
+      .swiper-pagination {
+        bottom: 10px;
+      }
+
+      .cat-animation {
+        width: 200px;
+        height: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="swiper-container" data-aos="fade-up" data-aos-duration="1000">
+      <div class="swiper-wrapper">
+        <!-- Slide 1 -->
+        <div
+          class="swiper-slide bg-gradient-to-r from-rose-400 via-rose-500 to-pink-500"
+        >
+          <div>
+            <h1 class="text-4xl font-bold mb-4">Selamat Datang, Joyyy!</h1>
+            <p class="text-lg">
+              Dalam dunia yang penuh warna, kamu adalah lukisan yang membuat
+              hidupku indah.
+            </p>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div
+          class="swiper-slide bg-gradient-to-r from-fuchsia-400 via-fuchsia-500 to-purple-500"
+        >
+          <div>
+            <h1 class="text-4xl font-bold mb-4">Komitmen Pertama</h1>
+            <p class="text-lg">
+              Selalu menjadi pelabuhan hatimu, tempat yang aman untuk bersandar
+              dalam badai kehidupan.
+            </p>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div
+          class="swiper-slide bg-gradient-to-r from-sky-400 via-sky-500 to-teal-500"
+        >
+          <div>
+            <h1 class="text-4xl font-bold mb-4">Komitmen Kedua</h1>
+            <p class="text-lg">
+              Menjaga kesehatan fisik dan mental. Saya akan berkomitmen untuk
+              pola makan sehat, olahraga teratur, dan menjaga keseimbangan
+              mental.
+            </p>
+          </div>
+        </div>
+
+        <!-- Tambahkan slide lain jika diperlukan -->
+      </div>
+
+      <!-- Tombol navigasi swiper -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+
+      <!-- Tombol navigasi swiper di bawah -->
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <div
+      class="cat-animation"
+      data-aos="fade-left"
+      data-aos-duration="1000"
+      data-aos-delay="500"
+    ></div>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdn.rawgit.com/michalsnik/aos/2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.lottiefiles.com/essential-cat.json"></script>
+    <script>
+      // Inisialisasi Swiper
+      var swiper = new Swiper(".swiper-container", {
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+      });
+
+      // Inisialisasi AOS
+      AOS.init();
+
+      // Tambahkan animasi kucing
+      lottie.loadAnimation({
+        container: document.querySelector(".cat-animation"),
+        renderer: "svg",
+        loop: true,
+        autoplay: true,
+        animationData: window.essentialCat,
+      });
+    </script>
+  </body>
+</html>
